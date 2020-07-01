@@ -1,12 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import Timer from "./timer";
+import Timer from "./components/timer";
+import Counters from "./components/counters";
 import * as serviceWorker from "./serviceWorker";
+import "bootstrap/dist/css/bootstrap.css";
 
 ReactDOM.render(
   <React.StrictMode>
     <Timer />
+    <Counters />
   </React.StrictMode>,
   document.getElementById("root")
 );
