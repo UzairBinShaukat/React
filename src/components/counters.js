@@ -9,11 +9,31 @@ class Counters extends Component {
       { id: 3, value: 0 },
     ],
   };
+  handleIncrement = (counter) => {
+    const counters = this.state.counters.map((c) => {
+      c.value = c.id === counter.id ? c.value + 1 : c.value;
+      return c;
+    });
+    this.setState({ counters });
+  };
+  handleDecrement = (counter) => {
+    const counters = this.state.counters.map((c) => {
+      c.value =
+        c.id === counter.id ? (c.value - 1 < 0 ? 0 : c.value - 1) : c.value;
+      return c;
+    });
+    this.setState({ counters });
+  };
   render() {
     return (
       <div>
         {this.state.counters.map((counter) => (
-          <Counter key={counter.id} value={counter.value} />
+          <Counter
+            key={counter.id}
+            counter={counter}
+            onIncrement={this.handleIncrement}
+            onDecrement={this.handleDecrement}
+          />
         ))}
       </div>
     );
