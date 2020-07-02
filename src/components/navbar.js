@@ -4,7 +4,9 @@ const Navbar = (props) => {
     <nav className="navbar navbar-light bg-light">
       <a className="navbar-brand" href="#">
         Navbar
-        <span className="badge badge-secondary m-2">{props.counters}</span>
+        <span className="badge badge-pill badge-secondary m-2">
+          {props.counters}
+        </span>
       </a>
     </nav>
   );

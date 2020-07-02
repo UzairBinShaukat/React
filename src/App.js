@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Navbar from "./components/navbar";
 import Counters from "./components/counters";
+import Timer from "./components/timer";
 import "./App.css";
 
 class App extends Component {
@@ -48,6 +49,7 @@ class App extends Component {
     return (
       <React.Fragment>
         <Navbar counters={this.state.totalCounts} />
+        <Timer />
         <Counters
           counters={this.state.counters}
           onReset={this.handleReset}
